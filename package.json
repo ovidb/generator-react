@@ -1,0 +1,31 @@
+{
+  "name": "@ovidb/generator-react",
+  "version": "0.1.0",
+  "description": "Make React component generation a one-liner",
+  "main": "generators/index.js",
+  "files": [
+    "app",
+    "generators"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^4.0.2",
+    "lodash": "^4.17.15",
+    "yosay": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovidb/generator-react.git"
+  },
+  "keywords": [
+    "yeoman",
+    "react",
+    "generator",
+    "flow"
+  ],
+  "author": "ovidb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovidb/generator-react/issues"
+  },
+  "homepage": "https://github.com/ovidb/generator-react#readme"
+}
