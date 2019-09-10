@@ -1,6 +1,6 @@
 {
   "name": "@ovidb/generator-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Make React component generation a one-liner",
   "main": "generators/index.js",
   "files": [

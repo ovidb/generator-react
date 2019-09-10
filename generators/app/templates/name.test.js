@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import <%= nameUp %> from './<%= name %>';
-import { selectorsExist } from '../../test/helpers';
+import { selectorsExist } from '../../../test/helpers';
 
 const setup = propsOverride => {
   const props = {

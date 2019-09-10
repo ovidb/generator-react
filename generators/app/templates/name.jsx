@@ -5,7 +5,7 @@ type Props = {
 
 }
 
-export const <%= nameUp %> = ({}: Props) = {
+export const <%= nameUp %> = (props: Props) => {
   return (
     <div className={styles.wrapper}>
 
