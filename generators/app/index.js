@@ -1,12 +1,11 @@
 const Generator = require('yeoman-generator');
 const yosay = require('yosay');
-const capitalize = require('lodash/capitalize');
 
 function toTitleCase(str) {
   return str
     .split('-')
-    .map(capitalize)
-    .join(' ');
+    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+    .join('');
 }
 
 module.exports = class extends Generator {
