@@ -1,7 +1,13 @@
 const Generator = require('yeoman-generator');
 const yosay = require('yosay');
 const capitalize = require('lodash/capitalize');
-const camelCase = require('lodash/camelCase');
+
+function toTitleCase(str) {
+  return str
+    .split('-')
+    .map(capitalize)
+    .join(' ');
+}
 
 module.exports = class extends Generator {
   // The name `constructor` is important here
@@ -20,7 +26,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'location',
         message: `Location :`,
-        default: defaultLocation,
+        default: defaultLocation
       },
       {
         type: 'input',
@@ -32,18 +38,18 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'name',
         message: `Your component name :`,
-        default: defaultComponentName,
-      },
-
+        default: defaultComponentName
+      }
     ];
 
     this.answers = await this.prompt(prompts);
-    this.answers.nameUp = capitalize(camelCase(this.answers.name));
+    this.answers.nameUp = toTitleCase(this.answers.name);
   }
 
   writing() {
     const { location, category, name } = this.answers;
-    const getTo = ext => `${location}/${category}/${this.answers.name}/${this.answers.name}${ext}`;
+    const getTo = ext =>
+      `${location}/${category}/${this.answers.name}/${this.answers.name}${ext}`;
 
     this._copyOver('name.jsx', getTo('.jsx'));
     this._copyOver('name.story.js', getTo('.story.js'));
@@ -55,7 +61,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath(from),
       this.destinationPath(to),
-      this.answers,
-    )
+      this.answers
+    );
   }
 };
